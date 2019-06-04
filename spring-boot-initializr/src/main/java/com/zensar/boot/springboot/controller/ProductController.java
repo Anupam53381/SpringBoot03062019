@@ -1,8 +1,9 @@
 package com.zensar.boot.springboot.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.zensar.boot.springboot.model.Product;
@@ -10,16 +11,21 @@ import com.zensar.boot.springboot.model.Product;
 @RestController
 public class ProductController {
 
-	/*
-	 * @RequestMapping("/") public String sayHello() { return "<h1>hello</h1>"; }
-	 */
-
-	// http://localhost:8080/products->enter
+	static List<Product> products=new ArrayList<>();
+	
+	static {
+		Product product1=new Product(1,"Laptop",30000);
+		Product product2=new Product(1,"Laptop",30000);
+		products.add(product1);
+		products.add(product2);
+	}
+	
+	
 
 	// @RequestMapping(value="/products",method=RequestMethod.GET)
-	@GetMapping("/product")
-	public Product getAllProducts() {
-		return new Product(10, "Laptop", 45000);
+	@GetMapping("/products")
+	public List<Product> getAllProducts() {
+		return products;
 	}
 
 }
