@@ -9,3 +9,10 @@ import com.zensar.boot.springboot.model.Product;
 public interface ProductRepository extends CrudRepository<Product,Integer> {
 
 }
+
+
+
+// Repository
+// CrudRepository
+// PagingAndSortingRepository
+// JpaRepository

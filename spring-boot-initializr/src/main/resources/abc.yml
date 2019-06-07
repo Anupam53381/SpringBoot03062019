@@ -1,0 +1,22 @@
+# server.port=5555
+
+server:
+  port: 7777
+  
+# spring.jpa.show-sql=true
+
+spring: 
+  jpa:
+    show-sql: true
+    hibernate: 
+      ddl-auto: update
+  datasource: 
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/testboot
+    
+# java -jar jarName
+    
+    
+
+

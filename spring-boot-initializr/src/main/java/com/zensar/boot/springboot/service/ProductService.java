@@ -15,6 +15,7 @@ import com.zensar.boot.springboot.repository.ProductRepository;
 
 @Service
 public class ProductService {
+	
 	@Autowired
 	private ProductRepository productRepository;
 	
@@ -23,7 +24,7 @@ public class ProductService {
 	}
 	
 	
-	public Product getProduct(@PathVariable("id") int productId) {
+	public Product getProduct( int productId) {
 		return productRepository.findById(productId).get();
 	}
 	
