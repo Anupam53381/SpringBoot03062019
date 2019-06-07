@@ -1,14 +1,7 @@
 package com.zensar.boot.springboot.service;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 import com.zensar.boot.springboot.model.Product;
 import com.zensar.boot.springboot.repository.ProductRepository;
@@ -25,12 +18,14 @@ public class ProductService {
 	
 	
 	public Product getProduct( int productId) {
-		return productRepository.findById(productId).get();
+		return productRepository.findById(productId).get(); //2.0.5
+		//return productRepository.findOne(productId);
 	}
 	
 	
 	public void insertProduct(Product product) {
 		productRepository.save(product);
+		
 	}
 
 
